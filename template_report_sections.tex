@@ -1,0 +1,352 @@
+%==============================================================================
+% TEMPLATE: DETAILED REPORT SECTIONS
+%==============================================================================
+%
+% PURPOSE:
+%   This file contains the detailed content for the REPORT mode.
+%   It includes comprehensive sections with full explanations, derivations,
+%   and extensive discussion that would be too detailed for a presentation.
+%
+% IMPORTANT FEATURES:
+%   - Each section has BOTH \label{} and \hypertarget{} commands
+%   - \label{} is used for internal cross-references within the report
+%   - \hypertarget{} creates named anchors for hyperlinks from the presentation
+%
+% HYPERLINK TARGETS:
+%   The \hypertarget{name}{} commands create "anchors" that can be referenced
+%   from the presentation slides using URLs like:
+%   https://your-site.github.io/report.pdf#intro
+%                                                ^^^^^ matches \hypertarget{intro}{}
+%
+% CUSTOMIZATION:
+%   Replace all placeholder text with your actual research content.
+%   Keep the \label{} and \hypertarget{} commands - they enable the hyperlink system.
+%   Add more sections/subsections as needed following the same pattern.
+%
+%==============================================================================
+
+%------------------------------------------------------------------------------
+% SECTION 1: INTRODUCTION
+%------------------------------------------------------------------------------
+% This section appears on approximately page 2 of the report (after title/TOC)
+\section{Introduction}
+\label{sec:introduction}          % For internal references: \ref{sec:introduction}
+\hypertarget{intro}{}              % For external links: report.pdf#intro
+
+% ← REPLACE THIS PARAGRAPH with your introduction
+This is the detailed introduction section of the report. Here you can provide 
+comprehensive background, context, and motivation for your work.
+
+% EXAMPLE: What makes a good introduction
+In academic and technical writing, it's important to:
+\begin{itemize}
+    \item Establish the problem context - Why does this matter?
+    \item Review relevant literature - What has been done before?
+    \item State research objectives clearly - What are you trying to achieve?
+    \item Outline the document structure - How is the rest organized?
+\end{itemize}
+
+%..............................................................................
+% SUBSECTION: Background
+%..............................................................................
+\subsection{Background}
+\label{subsec:background}
+\hypertarget{background}{}         % External link: report.pdf#background
+
+% ← REPLACE with your background information
+Detailed background information goes here. This section can include:
+\begin{itemize}
+    \item Extensive literature review
+    \item Historical context of the problem
+    \item Foundational concepts necessary for understanding your work
+    \item Previous approaches and their limitations
+\end{itemize}
+
+%..............................................................................
+% SUBSECTION: Objectives
+%..............................................................................
+\subsection{Objectives}
+\label{subsec:objectives}
+\hypertarget{objectives}{}         % External link: report.pdf#objectives
+
+% ← REPLACE with your specific objectives
+State your specific objectives and goals:
+\begin{enumerate}
+    \item First objective with detailed explanation and rationale
+    \item Second objective with context and expected outcomes
+    \item Third objective with methodology and success criteria
+\end{enumerate}
+
+%------------------------------------------------------------------------------
+% SECTION 2: METHODOLOGY
+%------------------------------------------------------------------------------
+\section{Methodology}
+\label{sec:methodology}
+\hypertarget{methodology}{}        % External link: report.pdf#methodology
+
+% ← REPLACE with your methodology description
+This section provides detailed methodology that would be too extensive for 
+a presentation slide. Include step-by-step procedures, equipment specifications,
+and justification for your chosen methods.
+
+%..............................................................................
+% SUBSECTION: Experimental Setup
+%..............................................................................
+\subsection{Experimental Setup}
+\label{subsec:setup}
+\hypertarget{setup}{}              % External link: report.pdf#setup
+
+% ← REPLACE with your experimental/analytical setup
+Describe your experimental or analytical setup in detail. Include:
+\begin{itemize}
+    \item Equipment specifications (model numbers, calibration details)
+    \item Software tools and versions used in analysis
+    \item Data collection procedures and sampling protocols
+    \item Quality control measures and validation procedures
+    \item Environmental conditions or constraints
+\end{itemize}
+
+% EXAMPLE: You might include a detailed equipment list:
+% \begin{table}[h]
+%     \centering
+%     \begin{tabular}{ll}
+%         \hline
+%         Equipment & Specifications \\
+%         \hline
+%         Microscope & Zeiss Model XYZ, 1000x magnification \\
+%         Camera & Canon EOS R5, 45MP sensor \\
+%         \hline
+%     \end{tabular}
+%     \caption{Equipment specifications}
+% \end{table}
+
+%..............................................................................
+% SUBSECTION: Data Analysis
+%..............................................................................
+\subsection{Data Analysis}
+\label{subsec:analysis}
+\hypertarget{analysis}{}           % External link: report.pdf#analysis
+
+% ← REPLACE with your data analysis methods
+Explain your data analysis approach in detail:
+
+% EXAMPLE: Mathematical model
+\begin{equation}
+\label{eq:main}
+y = f(x, \theta) = \sum_{i=1}^{n} \theta_i x^i
+\end{equation}
+
+% Explain the equation
+Where:
+\begin{itemize}
+    \item $y$ represents the output variable (e.g., strength, temperature)
+    \item $x$ is the input variable (e.g., time, load)
+    \item $\theta = [\theta_1, \theta_2, \ldots, \theta_n]$ is the parameter vector
+    \item $n$ is the model order, determined by cross-validation
+\end{itemize}
+
+% Include additional mathematical derivations and proofs here
+% Show your work step-by-step for transparency and reproducibility
+
+%------------------------------------------------------------------------------
+% SECTION 3: RESULTS
+%------------------------------------------------------------------------------
+\section{Results}
+\label{sec:results}
+\hypertarget{results}{}            % External link: report.pdf#results
+
+% ← REPLACE with your results introduction
+The experimental data shows excellent agreement with the theoretical thermal 
+response model. Figure~\ref{fig:temperature_time} presents the measured 
+temperature evolution compared to the model prediction.
+
+%..............................................................................
+% SHARED FIGURE: Using the reusable figure command
+%..............................................................................
+% This figure uses \figureTempData defined in template_shared_elements.tex
+% The SAME figure command is used in the presentation slides
+\begin{figure}[htbp]
+    \centering
+    \figureTempData   % ← Reusable command from template_shared_elements.tex
+    \caption{Experimental temperature measurements (blue circles) compared with 
+             theoretical model prediction (red dashed line). The exponential heating 
+             model $\eqThermalResponse$ shows excellent agreement with experimental 
+             data ($R^2 = 0.98$), validating the first-order thermal response 
+             assumption. Extracted parameters: \thermalConstant, \ambientTemp.}
+    \label{fig:temperature_time}
+\end{figure}
+
+%..............................................................................
+% SUBSECTION: Quantitative Findings
+%..............................................................................
+\subsection{Quantitative Findings}
+\label{subsec:quantitative}
+\hypertarget{quantitative}{}       % External link: report.pdf#quantitative
+
+% ← REPLACE with your quantitative results
+The thermal time constant \thermalConstant~was extracted from least-squares 
+fitting of the model equation $\eqThermalResponse$ to experimental data.
+
+This section can be extensive with:
+\begin{itemize}
+    \item Multiple sub-analyses
+    \item Statistical significance tests (p-values, confidence intervals)
+    \item Error analysis and uncertainty quantification
+    \item Sensitivity studies showing robustness of results
+\end{itemize}
+
+%..............................................................................
+% SUBSECTION: Qualitative Observations
+%..............................................................................
+\subsection{Qualitative Observations}
+\label{subsec:qualitative}
+\hypertarget{qualitative}{}        % External link: report.pdf#qualitative
+
+% ← REPLACE with your qualitative findings
+Discuss qualitative findings, patterns observed, and interpretations that 
+require extended discussion:
+
+\begin{itemize}
+    \item Visual patterns in data or images
+    \item Unexpected behaviors or anomalies
+    \item Trends that emerged during experimentation
+    \item Observations that inform future work
+\end{itemize}
+
+%------------------------------------------------------------------------------
+% SECTION 4: DISCUSSION
+%------------------------------------------------------------------------------
+\section{Discussion}
+\label{sec:discussion}
+\hypertarget{discussion}{}         % External link: report.pdf#discussion
+
+% ← REPLACE with your in-depth discussion
+Provide in-depth discussion of results, including:
+
+\begin{itemize}
+    \item \textbf{Interpretation in context:} How do your results compare to 
+          existing literature? Do they support or contradict previous findings?
+    
+    \item \textbf{Limitations and uncertainties:} What are the sources of error? 
+          What assumptions did you make? How might these affect conclusions?
+    
+    \item \textbf{Implications:} What do your results mean for theory and practice? 
+          How might they be applied in real-world scenarios?
+    
+    \item \textbf{Unexpected findings:} Did anything surprise you? Why might this 
+          have occurred? What does it suggest for future work?
+\end{itemize}
+
+%------------------------------------------------------------------------------
+% SECTION 5: CONCLUSION
+%------------------------------------------------------------------------------
+\section{Conclusion}
+\label{sec:conclusion}
+\hypertarget{conclusion}{}         % External link: report.pdf#conclusion
+
+% ← REPLACE with your conclusion
+Summarize the key findings and their significance. Discuss future work 
+directions and broader impacts.
+
+% Structure your conclusion to:
+% 1. Restate the problem and objectives
+% 2. Summarize main findings (bullet points work well)
+% 3. State the significance/contribution
+% 4. Identify limitations
+% 5. Suggest future directions
+
+%..............................................................................
+% SUBSECTION: Key Contributions
+%..............................................................................
+\subsection{Key Contributions}
+\label{subsec:contributions}
+\hypertarget{contributions}{}      % External link: report.pdf#contributions
+
+% ← REPLACE with your key contributions
+List the main contributions of this work:
+
+\begin{enumerate}
+    \item \textbf{Contribution 1:} Brief description of first major contribution
+    \item \textbf{Contribution 2:} Brief description of second major contribution
+    \item \textbf{Contribution 3:} Brief description of third major contribution
+\end{enumerate}
+
+%..............................................................................
+% SUBSECTION: Future Work
+%..............................................................................
+\subsection{Future Work}
+\label{subsec:future}
+\hypertarget{future}{}             % External link: report.pdf#future
+
+% ← REPLACE with your future work directions
+Outline potential directions for future research and development:
+
+\begin{itemize}
+    \item Extension to other materials/conditions
+    \item Refinement of methodology or model
+    \item Investigation of observed anomalies
+    \item Application to real-world problems
+\end{itemize}
+
+%------------------------------------------------------------------------------
+% REPORT-ONLY SECTIONS (Not included in presentation)
+%------------------------------------------------------------------------------
+
+% Acknowledgments section (appears only in report, not in presentation)
+\reportonly{
+\section*{Acknowledgments}
+% ← REPLACE with your acknowledgments
+Acknowledge funding sources, collaborators, advisors, and others who contributed 
+to the work. Include grant numbers if applicable.
+
+% EXAMPLE:
+% This work was supported by Grant No. ABC-123 from XYZ Foundation. 
+% The authors thank Dr. Jane Smith for helpful discussions.
+}
+
+% Bibliography section (appears only in report, not in presentation)
+\reportonly{
+\bibliographystyle{plain}
+% Uncomment the line below when you have a references.bib file
+% \bibliography{references}
+
+% To use bibliography:
+% 1. Create a file called references.bib
+% 2. Add your references in BibTeX format
+% 3. Cite them in the text with \cite{key}
+% 4. Uncomment the \bibliography line above
+% 5. Compile with: pdflatex → bibtex → pdflatex → pdflatex
+}
+
+%==============================================================================
+% TIPS FOR CUSTOMIZATION
+%==============================================================================
+%
+% ADDING NEW SECTIONS:
+%   Always include both \label{} and \hypertarget{} for new sections:
+%   
+%   \section{My New Section}
+%   \label{sec:mynewsection}
+%   \hypertarget{mynewsection}{}
+%
+% ADDING FIGURES:
+%   Use template_shared_elements.tex for figures that appear in both formats.
+%   For report-only figures:
+%   
+%   \begin{figure}[htbp]
+%       \centering
+%       \includegraphics[width=0.7\textwidth]{figures/myfigure.png}
+%       \caption{Description of the figure}
+%       \label{fig:myfigure}
+%   \end{figure}
+%
+% CROSS-REFERENCING:
+%   Reference figures: Figure~\ref{fig:myfigure}
+%   Reference equations: Equation~\ref{eq:main}
+%   Reference sections: Section~\ref{sec:introduction}
+%
+% REPORT-ONLY CONTENT:
+%   Use \reportonly{} for content that should only appear in the report:
+%   \reportonly{This detailed explanation is too long for slides.}
+%
+%==============================================================================

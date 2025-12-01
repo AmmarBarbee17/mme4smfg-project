@@ -1,0 +1,90 @@
+%==============================================================================
+% DUAL-MODE LATEX: Report + Presentation from Single Source
+%==============================================================================
+% Compile: .\compile.bat (generates both report.pdf and presentation.pdf)
+
+%------------------------------------------------------------------------------
+% DOCUMENT CLASS
+%------------------------------------------------------------------------------
+\ifdefined\ispresentation
+    \documentclass[aspectratio=169]{beamer}
+    \usetheme{Madrid}
+    \usecolortheme{default}
+\else
+    \documentclass[12pt,a4paper]{article}
+    \usepackage[margin=1in]{geometry}
+\fi
+
+%------------------------------------------------------------------------------
+% PACKAGES
+%------------------------------------------------------------------------------
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{hyperref}
+\usepackage{xcolor}
+\usepackage{tikz}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+
+%------------------------------------------------------------------------------
+% HYPERLINKS
+%------------------------------------------------------------------------------
+\ifdefined\ispresentation
+    \hypersetup{colorlinks=true, linkcolor=blue, urlcolor=blue, citecolor=blue}
+\else
+    \hypersetup{
+        colorlinks=true, linkcolor=blue, urlcolor=blue, citecolor=blue,
+        pdftitle={Your Report Title},
+        pdfauthor={Your Name}
+    }
+\fi
+
+%------------------------------------------------------------------------------
+% GITHUB PAGES URL (replace with your URL)
+%------------------------------------------------------------------------------
+\newcommand{\reporturl}{https://ammarbarbee17.github.io/mme4smfg-project/report.pdf}
+
+%------------------------------------------------------------------------------
+% HELPER COMMANDS
+%------------------------------------------------------------------------------
+\ifdefined\ispresentation
+    \newcommand{\reportonly}[1]{}
+    \newcommand{\slideonly}[1]{#1}
+\else
+    \newcommand{\reportonly}[1]{#1}
+    \newcommand{\slideonly}[1]{}
+\fi
+
+%------------------------------------------------------------------------------
+% METADATA (customize these)
+%------------------------------------------------------------------------------
+\title{Your Project Title}
+\author{Your Name}
+\date{\today}
+
+\ifdefined\ispresentation
+    \institute{Your Institution}
+\fi
+
+%==============================================================================
+% DOCUMENT
+%==============================================================================
+\begin{document}
+
+\ifdefined\ispresentation
+    \frame{\titlepage}
+\else
+    \maketitle
+    \tableofcontents
+    \newpage
+\fi
+
+\input{template_shared_elements.tex}
+
+\ifdefined\ispresentation
+    \input{template_presentation_slides.tex}
+\else
+    \input{template_report_sections.tex}
+\fi
+
+\end{document}

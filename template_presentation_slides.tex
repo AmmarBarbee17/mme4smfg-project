@@ -1,0 +1,341 @@
+%==============================================================================
+% TEMPLATE: PRESENTATION SLIDES
+%==============================================================================
+%
+% PURPOSE:
+%   This file contains the slides for the PRESENTATION mode (Beamer).
+%   Slides are concise summaries with hyperlinks to detailed sections in
+%   the full report PDF.
+%
+% HYPERLINK SYSTEM:
+%   Each slide includes hyperlinks using the \href command:
+%   \href{\reporturl\#sectionname}{Link text}
+%   
+%   Where:
+%   - \reporturl is defined in template_main.tex (your GitHub Pages URL)
+%   - \#sectionname matches a \hypertarget{} in template_report_sections.tex
+%   - Link text is what appears on the slide (usually with $\rightarrow$ arrow)
+%
+% SLIDE DESIGN TIPS:
+%   - Keep bullet points short (max 6-8 words each)
+%   - Use no more than 5-6 bullets per slide
+%   - One main idea per slide
+%   - Use visuals (figures, diagrams) when possible
+%   - Avoid dense paragraphs - this isn't the report!
+%
+% CUSTOMIZATION:
+%   Replace placeholder text with your actual content while keeping the
+%   hyperlink structure intact. The links are your secret weapon - they
+%   let audience members dig deeper during Q&A.
+%
+%==============================================================================
+
+%------------------------------------------------------------------------------
+% TITLE SLIDE (automatically generated in template_main.tex)
+%------------------------------------------------------------------------------
+% The title slide is created automatically from:
+% \title{}, \author{}, \date{}, \institute{} in template_main.tex
+
+%------------------------------------------------------------------------------
+% SLIDE 1: INTRODUCTION
+%------------------------------------------------------------------------------
+\begin{frame}{Introduction}
+    % ← REPLACE these bullet points with your introduction
+    % Keep it high-level - details are in the report
+    \begin{itemize}
+        \item Brief overview of the problem (1-2 sentences)
+        \item Why this work matters (impact/significance)
+        \item Key research question or hypothesis
+    \end{itemize}
+    
+    % HYPERLINK to detailed introduction in report
+    \vspace{1em}
+    \small
+    \href{\reporturl\#intro}{$\rightarrow$ See detailed introduction in report}
+\end{frame}
+
+%------------------------------------------------------------------------------
+% SLIDE 2: BACKGROUND
+%------------------------------------------------------------------------------
+\begin{frame}{Background}
+    % TWO-COLUMN LAYOUT: Text on left, visual on right
+    \begin{columns}
+        \begin{column}{0.6\textwidth}
+            % ← REPLACE with your key background concepts
+            \begin{itemize}
+                \item Key concept 1 (keep brief!)
+                \item Key concept 2
+                \item Key concept 3
+            \end{itemize}
+        \end{column}
+        \begin{column}{0.4\textwidth}
+            % ← ADD a figure here if you have one
+            % Uncomment and replace with your figure:
+            % \includegraphics[width=\textwidth]{figures/concept_diagram.png}
+            
+            % Or leave empty if no figure
+        \end{column}
+    \end{columns}
+    
+    % HYPERLINK to detailed background & literature review
+    \vspace{1em}
+    \small
+    \href{\reporturl\#background}{$\rightarrow$ Detailed background \& literature review}
+\end{frame}
+
+%------------------------------------------------------------------------------
+% SLIDE 3: RESEARCH OBJECTIVES
+%------------------------------------------------------------------------------
+\begin{frame}{Research Objectives}
+    % ← REPLACE with your specific objectives
+    % Use numbered list for objectives - makes them clear and memorable
+    \begin{enumerate}
+        \item \textbf{First objective} - one sentence description
+        \item \textbf{Second objective} - one sentence description
+        \item \textbf{Third objective} - one sentence description
+    \end{enumerate}
+    
+    % TIP: You can add a fourth objective if needed, but try to keep it to 3-4 max
+    
+    % HYPERLINK to complete objectives with full rationale
+    \vspace{1em}
+    \small
+    \href{\reporturl\#objectives}{$\rightarrow$ Complete objectives and rationale}
+\end{frame}
+
+%------------------------------------------------------------------------------
+% SLIDE 4: METHODOLOGY OVERVIEW
+%------------------------------------------------------------------------------
+\begin{frame}{Methodology}
+    % BLOCK environment highlights key information
+    \begin{block}{Approach}
+        % ← REPLACE with 1-2 sentence summary of your overall approach
+        High-level summary of the methodology (e.g., "Experimental testing 
+        combined with computational modeling")
+    \end{block}
+    
+    % ← REPLACE with your key methodological steps
+    \begin{itemize}
+        \item Key step 1 (e.g., "Sample preparation and testing")
+        \item Key step 2 (e.g., "Data collection using X technique")
+        \item Key step 3 (e.g., "Statistical analysis of results")
+    \end{itemize}
+    
+    % MULTIPLE HYPERLINKS - audience can jump to different parts of methodology
+    \vspace{1em}
+    \small
+    \href{\reporturl\#methodology}{$\rightarrow$ Detailed methodology} \\
+    \href{\reporturl\#setup}{$\rightarrow$ Experimental setup} \\
+    \href{\reporturl\#analysis}{$\rightarrow$ Data analysis procedures}
+\end{frame}
+
+%------------------------------------------------------------------------------
+% SLIDE 5: THEORETICAL FRAMEWORK - Thermal Response Model
+%------------------------------------------------------------------------------
+\begin{frame}{Theoretical Framework}
+    % Uses the shared equation command from template_shared_elements.tex
+    % The SAME equation appears in the report with full derivation
+    
+    \textbf{First-Order Thermal Response Model:}
+    
+    \begin{equation*}
+        \eqThermalResponse   % ← Reusable command from template_shared_elements.tex
+    \end{equation*}
+    
+    \vspace{0.5em}
+    % Briefly explain the variables - using shared parameter definitions
+    \begin{itemize}
+        \item $T(t)$: temperature at time $t$
+        \item \initialTemp: initial temperature
+        \item \ambientTemp: equilibrium temperature
+        \item \thermalConstant: thermal time constant
+    \end{itemize}
+    
+    % HYPERLINK to full mathematical derivation in report
+    \vspace{1em}
+    \small
+    \href{\reporturl\#analysis}{$\rightarrow$ Full derivation and mathematical details}
+\end{frame}
+
+%------------------------------------------------------------------------------
+% SLIDE 6: KEY RESULTS - Temperature Data
+%------------------------------------------------------------------------------
+\begin{frame}{Key Results}
+    % Uses the SAME figure command as the report (template_shared_elements.tex)
+    % This is TRUE sharing - one definition, used in both places!
+    
+    \begin{center}
+        % Include the same TikZ figure that appears in the report
+        \scalebox{0.8}{\figureTempData}   % ← Same command used in report!
+    \end{center}
+    
+    \textbf{Key Finding:}
+    \begin{itemize}
+        \item Exponential model shows excellent agreement ($R^2 = 0.98$)
+        \item Time constant \thermalConstant~extracted from fit
+        \item Validates first-order thermal response assumption
+    \end{itemize}
+    
+    % TIP: Use numbers and percentages - they're memorable
+    
+    % HYPERLINK to complete results with statistical analysis
+    \vspace{0.5em}
+    \small
+    \href{\reporturl\#results}{$\rightarrow$ Complete results and statistical analysis}
+    \href{\reporturl\#qualitative}{$\rightarrow$ Qualitative observations}
+\end{frame}
+
+%------------------------------------------------------------------------------
+% SLIDE 7: DISCUSSION HIGHLIGHTS
+%------------------------------------------------------------------------------
+\begin{frame}{Discussion Highlights}
+    % BLOCK environment for the main takeaway message
+    \begin{block}{Key Takeaway}
+        % ← REPLACE with your main conclusion (1-2 sentences)
+        Main conclusion or insight from the work. This should be memorable
+        and clearly state what you've learned.
+    \end{block}
+    
+    % ← REPLACE with implications of your work
+    \textbf{Implications:}
+    \begin{itemize}
+        \item Theoretical implication (advances understanding of...)
+        \item Practical application (can be used for...)
+        \item Industry relevance (matters to... because...)
+    \end{itemize}
+    
+    % HYPERLINK to full discussion with limitations
+    \vspace{1em}
+    \small
+    \href{\reporturl\#discussion}{$\rightarrow$ In-depth discussion and limitations}
+\end{frame}
+
+%------------------------------------------------------------------------------
+% SLIDE 8: CONCLUSIONS
+%------------------------------------------------------------------------------
+\begin{frame}{Conclusions}
+    % ← REPLACE with your key contributions (3-4 maximum)
+    \begin{enumerate}
+        \item \textbf{Contribution 1} - brief statement of first achievement
+        \item \textbf{Contribution 2} - brief statement of second achievement
+        \item \textbf{Contribution 3} - brief statement of third achievement
+    \end{enumerate}
+    
+    % ← REPLACE with your future work directions
+    \vspace{1em}
+    \textbf{Future Directions:}
+    \begin{itemize}
+        \item Next step 1 (what comes next)
+        \item Next step 2 (longer-term vision)
+    \end{itemize}
+    
+    % HYPERLINKS to detailed conclusions and future work
+    \vspace{1em}
+    \small
+    \href{\reporturl\#conclusion}{$\rightarrow$ Complete conclusions} \\
+    \href{\reporturl\#future}{$\rightarrow$ Future work details}
+\end{frame}
+
+%------------------------------------------------------------------------------
+% FINAL SLIDE: QUESTIONS / THANK YOU
+%------------------------------------------------------------------------------
+\begin{frame}[plain]
+    % [plain] removes header/footer for a clean final slide
+    
+    \centering
+    \Huge Thank You!
+    
+    \vspace{2em}
+    \Large Questions?
+    
+    % HYPERLINK to the full report (useful during Q&A)
+    \vspace{2em}
+    \normalsize
+    \href{\reporturl}{$\rightarrow$ Access the full report}
+    
+    % OPTIONAL: Add your contact information
+    % \vspace{2em}
+    % \small
+    % your.email@institution.edu
+\end{frame}
+
+%==============================================================================
+% ADDITIONAL SLIDE IDEAS (Uncomment and customize as needed)
+%==============================================================================
+
+% %------------------------------------------------------------------------------
+% % OPTIONAL: EXTRA SLIDE - Detailed Results Breakdown
+% %------------------------------------------------------------------------------
+% \begin{frame}{Results Breakdown}
+%     % Use this if you have multiple result categories
+%     
+%     \begin{columns}
+%         \begin{column}{0.5\textwidth}
+%             \textbf{Category A:}
+%             \begin{itemize}
+%                 \item Result 1
+%                 \item Result 2
+%             \end{itemize}
+%         \end{column}
+%         \begin{column}{0.5\textwidth}
+%             \textbf{Category B:}
+%             \begin{itemize}
+%                 \item Result 3
+%                 \item Result 4
+%             \end{itemize}
+%         \end{column}
+%     \end{columns}
+% \end{frame}
+
+% %------------------------------------------------------------------------------
+% % OPTIONAL: EXTRA SLIDE - Comparison with Existing Work
+% %------------------------------------------------------------------------------
+% \begin{frame}{Comparison with Prior Work}
+%     % Table comparing your results with literature
+%     
+%     \begin{table}
+%         \centering
+%         \begin{tabular}{lcc}
+%             \hline
+%             Method & Metric 1 & Metric 2 \\
+%             \hline
+%             Smith et al. & 85\% & 0.92 \\
+%             Jones et al. & 78\% & 0.88 \\
+%             \textbf{This work} & \textbf{93\%} & \textbf{0.96} \\
+%             \hline
+%         \end{tabular}
+%     \end{table}
+%     
+%     \vspace{1em}
+%     \small
+%     \href{\reporturl\#discussion}{$\rightarrow$ Detailed comparison in report}
+% \end{frame}
+
+%==============================================================================
+% TIPS FOR EFFECTIVE PRESENTATIONS
+%==============================================================================
+%
+% DESIGN PRINCIPLES:
+%   - One idea per slide
+%   - Maximum 6 bullets per slide
+%   - Maximum 6 words per bullet
+%   - Use figures/diagrams when possible (worth 1000 words!)
+%   - Consistent formatting throughout
+%
+% HYPERLINK STRATEGY:
+%   - Include hyperlinks on every slide
+%   - During Q&A, you can click through to detailed answers
+%   - Audience can review details later at their own pace
+%   - Professional and shows depth of work
+%
+% TIMING:
+%   - Plan ~1-2 minutes per slide
+%   - This template has 9 slides = ~12-15 minute presentation
+%   - Adjust number of slides based on your time limit
+%
+% CUSTOMIZING THEMES:
+%   - Change theme in template_main.tex: \usetheme{Berlin}
+%   - Options: Madrid, Berlin, Copenhagen, Singapore, Warsaw, etc.
+%   - Preview themes: https://hartwork.org/beamer-theme-matrix/
+%
+%==============================================================================
