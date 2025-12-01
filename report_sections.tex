@@ -120,9 +120,63 @@ Describe your experimental or analytical setup in detail. Include:
 %     \caption{Equipment specifications}
 % \end{table}
 
-%..............................................................................
+%...............................................................................
+% SUBSECTION: Thermal Response Model
+%...............................................................................
+\subsection{Thermal Response Model Derivation}
+\label{subsec:thermalmodel}
+\hypertarget{thermalmodel}{}      % External link: report.pdf#thermalmodel
+
+% ← REPLACE with your detailed thermal model derivation
+% This section should contain the full mathematical derivation of the
+% first-order thermal response model shown in the presentation.
+
+The thermal response of the system can be modeled using Newton's law of cooling.
+Starting from the energy balance:
+
+\begin{equation}
+\label{eq:thermal_energy_balance}
+m c_p \frac{dT}{dt} = -h A (T - T_{\infty})
+\end{equation}
+
+Where:
+\begin{itemize}
+    \item $m$ is the mass of the object
+    \item $c_p$ is the specific heat capacity
+    \item $h$ is the heat transfer coefficient
+    \item $A$ is the surface area
+    \item $T$ is the temperature
+    \item $T_{\infty}$ is the ambient temperature
+\end{itemize}
+
+Defining the thermal time constant \thermalConstant~as:
+
+\begin{equation}
+\label{eq:thermal_constant}
+\tau = \frac{mc_p}{hA}
+\end{equation}
+
+We can rewrite Equation~\ref{eq:thermal_energy_balance} as:
+
+\begin{equation}
+\label{eq:thermal_ode}
+\frac{dT}{dt} = -\frac{1}{\tau}(T - T_{\infty})
+\end{equation}
+
+Solving this first-order ordinary differential equation with initial condition $T(0) = $ \initialTemp:
+
+\begin{equation}
+\label{eq:thermal_solution}
+\eqThermalResponse
+\end{equation}
+
+This exponential decay model will be validated against experimental data in Section~\ref{sec:results}.
+
+% Add additional derivation steps, assumptions, or boundary conditions as needed
+
+%...............................................................................
 % SUBSECTION: Data Analysis
-%..............................................................................
+%...............................................................................
 \subsection{Data Analysis}
 \label{subsec:analysis}
 \hypertarget{analysis}{}           % External link: report.pdf#analysis
